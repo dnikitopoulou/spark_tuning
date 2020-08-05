@@ -1,0 +1,37 @@
+For SparkBench Optimized Execution:
+
+./spark_submit.sh --class org.apache.spark.examples.mllib.SparseNaiveBayes  /HiBench/sparkbench/assembly/target/sparkbench-assembly-7.1-SNAPSHOT-dist.jar hdfs://sandbox:9000/HiBench/Bayes/Input
+
+./spark_submit.sh --class com.intel.hibench.sparkbench.ml.DenseKMeans /HiBench/sparkbench/assembly/target/sparkbench-assembly-7.1-SNAPSHOT-dist.jar -k 10 --numIterations 5 hdfs://sandbox:9000/HiBench/Kmeans/Input/samples
+ 
+./spark_submit.sh --class com.intel.hibench.sparkbench.ml.SVMWithSGDExample /HiBench/sparkbench/assembly/target/sparkbench-assembly-7.1-SNAPSHOT-dist.jar --numIterations 100 --stepSize 1.0 --regParam 0.01 hdfs://sandbox:9000/HiBench/SVM/Input
+
+./spark_submit.sh --class com.intel.hibench.sparkbench.sql.ScalaSparkSQLBench /HiBench/sparkbench/assembly/target/sparkbench-assembly-7.1-SNAPSHOT-dist.jar ScalaAggregation /HiBench/report/aggregation/spark/conf/../uservisits_aggre.hive
+
+./spark_submit.sh --class com.intel.hibench.sparkbench.sql.ScalaSparkSQLBench /HiBench/sparkbench/assembly/target/sparkbench-assembly-7.1-SNAPSHOT-dist.jar ScalaJoin /HiBench/report/join/spark/conf/../rankings_uservisits_join.hive
+
+./spark_submit.sh --class com.intel.hibench.sparkbench.sql.ScalaSparkSQLBench /HiBench/sparkbench/assembly/target/sparkbench-assembly-7.1-SNAPSHOT-dist.jar ScalaScan /HiBench/report/scan/spark/conf/../rankings_uservisits_scan.hive
+
+./spark_submit.sh --class org.apache.spark.examples.SparkPageRank /HiBench/sparkbench/assembly/target/sparkbench-assembly-7.1-SNAPSHOT-dist.jar hdfs://sandbox:9000/HiBench/Pagerank/Input/edges hdfs://sandbox:9000/HiBench/Pagerank/Output 1
+
+./spark_submit.sh --class com.intel.hibench.sparkbench.ml.LinearRegression /HiBench/sparkbench/assembly/target/sparkbench-assembly-7.1-SNAPSHOT-dist.jar --numIterations 100 --stepSize 0.00001 hdfs://sandbox:9000/HiBench/Linear/Input
+
+./spark_submit.sh --class com.intel.hibench.sparkbench.ml.GradientBoostedTree /HiBench/sparkbench/assembly/target/sparkbench-assembly-7.1-SNAPSHOT-dist.jar --numClasses 2 --maxDepth 30 --maxBins 32 --numIterations 20 --learningRate 0.1 hdfs://sandbox:9000/HiBench/GBT/Input
+
+./spark_submit.sh --class com.intel.hibench.sparkbench.micro.ScalaSort /HiBench/sparkbench/assembly/target/sparkbench-assembly-7.1-SNAPSHOT-dist.jar hdfs://sandbox:9000/HiBench/Sort/Input hdfs://sandbox:9000/HiBench/Sort/Output
+
+./spark_submit.sh --class com.intel.hibench.sparkbench.ml.LDAExample /HiBench/sparkbench/assembly/target/sparkbench-assembly-7.1-SNAPSHOT-dist.jar --numTopics 10 --maxIterations 10 --optimizer online --maxResultSize 1g hdfs://sandbox:9000/HiBench/LDA/Input hdfs://sandbox:9000/HiBench/LDA/Output
+
+./spark_submit.sh --class com.intel.hibench.sparkbench.ml.ALSExample /HiBench/sparkbench/assembly/target/sparkbench-assembly-7.1-SNAPSHOT-dist.jar --numUsers 100 --numProducts 100 --rank 10 --numRecommends 20 --numIterations 20 --implicitPrefs true --numProductBlocks -1 --numUserBlocks -1 --lambda 1.0 hdfs://sandbox:9000/HiBench/ALS/Input
+
+./spark_submit.sh --class com.intel.hibench.sparkbench.ml.LogisticRegression /HiBench/sparkbench/assembly/target/sparkbench-assembly-7.1-SNAPSHOT-dist.jar hdfs://sandbox:9000/HiBench/LR/Input
+
+./spark_submit.sh --class com.intel.hibench.sparkbench.ml.RandomForestClassification /HiBench/sparkbench/assembly/target/sparkbench-assembly-7.1-SNAPSHOT-dist.jar --numTrees 100 --numClasses 2 --featureSubsetStrategy auto --impurity gini --maxDepth 4 --maxBins 32 hdfs://sandbox:9000/HiBench/RF/Input
+
+./spark_submit.sh --class com.intel.hibench.sparkbench.ml.PCAExample /HiBench/sparkbench/assembly/target/sparkbench-assembly-7.1-SNAPSHOT-dist.jar hdfs://sandbox:9000/HiBench/PCA/Input 1g
+
+./spark_submit.sh --class com.intel.hibench.sparkbench.ml.SVDExample /HiBench/sparkbench/assembly/target/sparkbench-assembly-7.1-SNAPSHOT-dist.jar --numFeatures 1000 --numSingularValues 800 --computeU true --maxResultSize 1g hdfs://sandbox:9000/HiBench/SVD/Input
+
+./spark_submit.sh --class com.intel.hibench.sparkbench.micro.ScalaTeraSort /HiBench/sparkbench/assembly/target/sparkbench-assembly-7.1-SNAPSHOT-dist.jar hdfs://sandbox:9000/HiBench/Terasort/Input hdfs://sandbox:9000/HiBench/Terasort/Output
+
+./spark_submit.sh --class com.intel.hibench.sparkbench.micro.ScalaWordCount /HiBench/sparkbench/assembly/target/sparkbench-assembly-7.1-SNAPSHOT-dist.jar hdfs://sandbox:9000/HiBench/Wordcount/Input hdfs://sandbox:9000/HiBench/Wordcount/Output

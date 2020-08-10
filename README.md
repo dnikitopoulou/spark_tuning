@@ -1,6 +1,8 @@
 # spark_tuning
 ML-driven Automated Framework for Tuning Spark Applications
 
+In this thesis, we design a framework that tunes in an automated way Spark’s parameters, depending on the workload and the size of the input data. We locate the parameters with the greatest impact on the execution of the applications and we form a methodology to tune them accordingly so as to minimize the execution time. Next, we integrate our solution into Spark, with the use of a wrapper script and we provide the user the chance to run a simple spark-submit command but actually executing the one with the optimal configuration.
+
 Prerequisites: Python, OpenTuner, Docker. 
 
 First run create_models.sh to create all the models of the Framework. 
